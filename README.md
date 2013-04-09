@@ -7,8 +7,8 @@ Forked from http://code.google.com/p/nagios-munin/
 
 Assumptions
 ===========
-* You have Nagios and Munin installed on the same server
-* You have pnp4nagios installed
+* You have Nagios (http://nagios.org/) and Munin (http://munin-monitoring.org/) installed on the same server.
+* You have pnp4nagios installed (http://www.pnp4nagios.org/).
 
 Usage
 =====
