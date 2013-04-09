@@ -50,7 +50,6 @@ my $hostname    = undef;
 my $domain      = undef;
 my $module      = undef;
 
-
 # nagios specific
 my $status          = '0';
 my $problem_on_name = undef;
@@ -61,8 +60,6 @@ $ENV{'BASH_ENV'}='';
 $ENV{'ENV'}='';
 $ENV{'PATH'}='';
 $ENV{'LC_ALL'}='C';
-
-
 
 Getopt::Long::Configure('bundling');
 GetOptions
@@ -82,7 +79,6 @@ GetOptions
 
 # check if everything is ok
 check_parameters();
-
 
 ## Open suggested directory
 if (-d $datadir."/".$domain) {
@@ -176,15 +172,12 @@ foreach (@rrd) {
     }
 }
 
-
 if ($status eq 1) {
        print "$problem_on_name value $problem_value, is above warning threshold $opt_w\n";
        $status = $ERRORS{"WARNING"};
-
 } elsif ($status eq 2) {
        print "$problem_on_name value $problem_value,  is above critical threshold $opt_c\n";
        $status = $ERRORS{"CRITICAL"};
-
 } else {
        print "$response_text";
        if ($opt_N) {
@@ -194,7 +187,6 @@ if ($status eq 1) {
        $status = $ERRORS{"OK"};
 }
 
-
 exit $status;
 
 ##
@@ -202,7 +194,6 @@ exit $status;
 ### Functions
 ###
 ##
-
 
 # Decypher the rrd black box ^^
 sub get_last_rrd_data {
@@ -236,7 +227,6 @@ sub get_last_rrd_data {
     }
 }
 
-
 # sanitize for human readable output
 sub sanitize {
     my $var = shift;
@@ -250,8 +240,6 @@ sub sanitize {
     }
     return $var;
 }
-
-
 
 # That one check parameters
 sub check_parameters {
@@ -322,11 +310,9 @@ sub check_parameters {
 
 } # end check_options
 
-
 sub print_usage () {
    print "Usage: $0  -H <host> -M <Module> [-d <domain>] [-w <warn level>] [-c <crit level>] [-V] [-D <datadir>] [-$
 }
-
 
 sub print_help () {
   print "\nMonitor server via Munin-node pulled data\n";
