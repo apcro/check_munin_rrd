@@ -4,8 +4,11 @@
 #
 # check_munin_rrd.pl Copyright (C) 2007 Julien Rottenberg <julien@rottenberg.info>
 #
+# Forked and extended by Tom Gordon <cro@apsumon.co.uk>
+# 
 # check_munin_rrd.pl can check various modules via rrd objects.
 #
+# Can also be used to post-process Munin RRD objects for use by pnp4nagios. Not an elegant solution, but it works.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
